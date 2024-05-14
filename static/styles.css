@@ -1,0 +1,379 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-background {
+    background: linear-gradient(to right, #ffffff,);
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #ffffff;
+}
+
+.contact-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: url('path/to/your/image.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.gallery {
+    background-color: #f8f8f8;
+    padding: 80px 20px;
+    border-radius: 20px;
+}
+
+.gallery h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+footer {
+    background-color: #b8d2ee;
+    padding: 30px 20px;
+    border-radius: inherit;
+    color: #000000;
+    text-align: center;
+    
+}
+
+footer p {
+    font-size: 1em;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    .gallery {
+        padding: 60px 20px;
+    }
+
+    .gallery h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.ikon-sosial {
+    list-style: none;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ikon-sosial li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.ikon-sosial a {
+    font-size: 1em;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.ikon-sosial a:hover {
+    color: #007bff;
+}
+
+/* CSS untuk ikon Font Awesome */
+.fab {
+    font-family: "Font Awesome 5 Brands";
+}
+
+.fab.fa-whatsapp { color: #25D366; }
+.fab.fa-instagram { color: #E4405F; }
+.fab.fa-facebook { color: #1877F2; }
+.fab.fa-twitter { color: #1DA1F2; }
+#about {
+    background-color: #fff; /* Latar belakang putih untuk bagian Tentang Kami */
+    padding: 50px 20px;
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    margin-top: 20px;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Rata tengah untuk judul */
+    text-transform: uppercase; /* Huruf besar */
+    letter-spacing: 2px; /* Spasi antar huruf */
+}
+
+#about p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#about ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+#about ul li::before {
+    content: "•"; /* Bullet point custom */
+    color: #007bff; /* Warna bullet point */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+#about .section-title {
+    font-size: 1.5em;
+    color: #007bff; /* Warna biru untuk judul seksi */
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    #about h2 {
+        font-size: 2em;
+    }
+
+    #about p, #about ul li {
+        font-size: 1em;
+    }
+
+    #about .section-title {
+        font-size: 1.3em;
+    }
+}
+/* Tambahkan CSS untuk lightbox/modal di sini */
+/* Contoh CSS untuk lightbox sederhana */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Previous and next buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Close button */
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    transition: 0.6s ease;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Caption text */
+.caption-container {
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
+    color: white;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* Gaya tombol navigasi kiri */
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Gaya tombol navigasi kanan */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
