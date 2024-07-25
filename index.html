@@ -1,316 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Safurniture Interior</title>
-    <meta name="description" content="Temukan berbagai macam produk furniture berkualitas tinggi dengan harga terbaik di Safurniture Interior.">
-    <meta name="keywords" content="furniture, toko furniture, sofa, kursi kayu, meja, Safurniture Interior">
-    <meta name="author" content="Safurniture Interior">
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="ml6tSv33BP0CWWjq90sPtzaYZ9b9WVdn53yr9p06k4Y" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Entri Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        h1 {
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <header class="header-background">
-        <div class="container">
-           
-            <div class="container">
-                <img src="static/logo.png" alt="logo" class="logo">
-                <p>SafurnitureInterior<p>
-                <p>"Menyajikan keahlian dalam pembuatan furnitur kustom untuk rumah, kantor, dan apartemen, mempersembahkan karya-karya yang elegan dan berkualitas tinggi. Dengan fokus pada bahan berkualitas, setiap furnitur menjadi simbol keindahan dan fungsionalitas yang tak tertandingi.".</p>
-               
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Beranda</a></li>
-                    <li><a href="#products">Produk</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="https://wa.me/1234567890" target="_blank">Kontak</a></li>
-                    
-                </ul>
-            </nav>
-            <div id="contactInfo" class="contact-info">
-                <h2>Temukan Kami di Alamat Berikut:</h2>
-            <p><strong>Alamat Kantor:</strong><br>
-            Jalan Contoh No. 123<br>
-            Kota Contoh, Negara Contoh</p>
+    <h1>Entri Data</h1>
+    <div class="form-container">
+        <label for="sto">STO</label>
+        <input type="text" id="sto">
 
-            <p><strong>Nomor Telepon:</strong><br>
-            (123) 456-7890</p>
+        <label for="gpon">GPON</label>
+        <input type="text" id="gpon">
 
-            <p><strong>Alamat Email:</strong><br>
-            info@contoh.com</p>
-            <h2>Silakan Konsultasi dengan Kami Melalui Platform Berikut</h2>
-            <ul class="ikon-sosial">
-                <li><a href="https://wa.me/1234567890"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-            </ul>
-            </div>
-        </div>
-    </header>
+        <label for="slot-port">Slot-port</label>
+        <input type="text" id="slot-port">
 
-    
+        <label for="ea-rack">EA Rack</label>
+        <input type="text" id="ea-rack">
 
-    <section id="products" class="gallery">
-        <div class="container">
-            <h2>Produk Unggulan</h2>
-            <div class="product-gallery">
-                <div class="product">
-                    <img src="static/jpg/IMG_1838.JPG" alt="Product 1" onclick="openModal();currentSlide(1)">
-                    <div class="product-info">
-                        <h3>Custom Kitchen Set</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1839.JPG" alt="Product 2"onclick="openModal();currentSlide(2)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1841.JPG" alt="Product 3"onclick="openModal();currentSlide(3)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1847.JPG" alt="Product 4"onclick="openModal();currentSlide(4)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1850.JPG" alt="Product 5"onclick="openModal();currentSlide(5)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1851.JPG" alt="Product 6"onclick="openModal();currentSlide(6)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1855.JPG" alt="Product 7"onclick="openModal();currentSlide(7)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1862.JPG" alt="Product 8"onclick="openModal();currentSlide(8)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1862.JPG" alt="Product 9"onclick="openModal();currentSlide(9)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1864.JPG" alt="Product 10"onclick="openModal();currentSlide(10)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1865.JPG" alt="Product 11"onclick="openModal();currentSlide(11)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1868.JPG" alt="Product 12"onclick="openModal();currentSlide(12)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1869.JPG" alt="Product 12"onclick="openModal();currentSlide(12)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1871.JPG" alt="Product 13"onclick="openModal();currentSlide(13)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1871.JPG" alt="Product 13"onclick="openModal();currentSlide(13)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1873.JPG" alt="Product 14"onclick="openModal();currentSlide(14)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="static/jpg/IMG_1874.JPG" alt="Product 15"onclick="openModal();currentSlide(15)">
-                    <div class="product-info">
-                        <h3>Bespoke Wardrobe</h3>
-                        <p>Dari pilihan material hingga detail desain, memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami. hanya dengan Harga: Rp 1800k/meter.</p>
-                    </div>
-                </div>
-                
-        </div>
-        <section id="about">
-            <div class="container">
-                <h2>Tentang Kami</h2>
-                <p>Selamat datang di saFurniture Interior, di mana kami menyajikan keahlian unggul dalam pembuatan furnitur kustom untuk rumah, kantor, dan apartemen. Kami bangga mempersembahkan karya-karya yang elegan dan berkualitas tinggi, yang dirancang untuk memenuhi kebutuhan spesifik dan gaya hidup Anda.</p>
-                <h3 class="section-title">Keunggulan Kami</h3>
-                <ul>
-                    <li><strong>Desain Elegan dan Modern:</strong> Kami menggabungkan estetika yang memukau dengan fungsionalitas yang optimal, memastikan setiap furnitur tidak hanya indah dipandang tetapi juga praktis digunakan.</li>
-                    <li><strong>Bahan Berkualitas Tinggi:</strong> Setiap produk dibuat dari bahan-bahan terbaik yang dipilih dengan cermat untuk menjamin ketahanan dan keindahan yang bertahan lama.</li>
-                    <li><strong>Kustomisasi Penuh:</strong> Dari pilihan material hingga detail desain, kami memberikan Anda kebebasan untuk mengekspresikan gaya pribadi Anda dalam setiap karya kami.</li>
-                </ul>
-                <h3 class="section-title">Filosofi Kami</h3>
-                <p>Kami percaya bahwa furnitur adalah lebih dari sekedar perabot; ia adalah elemen penting yang menciptakan suasana dan fungsi dalam ruang Anda. Oleh karena itu, kami berkomitmen untuk memberikan hasil yang tidak hanya memenuhi ekspektasi Anda, tetapi juga melampauinya. Setiap furnitur yang kami buat adalah simbol keindahan dan fungsionalitas yang tak tertandingi, dirancang untuk memberikan kenyamanan dan kepuasan maksimal.</p>
-                <h3 class="section-title">Layanan Kami</h3>
-                <ul>
-                    <li><strong>Rumah:</strong> Solusi furnitur untuk setiap ruangan di rumah Anda, mulai dari ruang tamu yang nyaman hingga kamar tidur yang menenangkan.</li>
-                    <li><strong>Kantor:</strong> Perabot kantor yang dirancang untuk meningkatkan produktivitas dan menciptakan lingkungan kerja yang profesional dan menyenangkan.</li>
-                    <li><strong>Apartemen:</strong> Desain furnitur yang cerdas dan efisien, ideal untuk memaksimalkan ruang dalam apartemen Anda.</li>
-                </ul>
-                <p>Kami mengundang Anda untuk menjelajahi koleksi kami dan menemukan bagaimana kami dapat membantu mengubah visi Anda menjadi realitas. Dengan dedikasi pada keunggulan dan detail, SaFunrinture interior adalah mitra Anda dalam menciptakan ruang yang sempurna.</p>
-            </div>
-        </section>
+        <label for="ea-panel">EA Panel</label>
+        <input type="text" id="ea-panel">
 
-   
-    <footer>
-        <div class="container">
-            <p>&copy;saFurniture. All rights reserved.</p>
-        </div>
-    </footer>
-    <!-- Letakkan modal di bagian akhir dokumen -->
-<div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1838.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1839.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1841.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1847.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1850.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1851.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1855.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1862.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1862.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1864.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1865.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1868.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1869.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1871.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1873.JPG" style="width:100%">
-        </div>
-        <div class="mySlides">
-            <img src="static/jpg/IMG_1874.JPG" style="width:100%">
-        </div>
-        <!-- Tambahkan gambar produk lainnya di sini jika perlu -->
-        
-        <!-- Tombol navigasi -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <label for="ea-slot-port">EA Slot.Port</label>
+        <input type="text" id="ea-slot-port">
+
+        <label for="oa-rack">OA Rack</label>
+        <input type="text" id="oa-rack">
+
+        <label for="oa-panel">OA Panel</label>
+        <input type="text" id="oa-panel">
+
+        <label for="oa-slot-port">OA Slot.Port</label>
+        <input type="text" id="oa-slot-port">
+
+        <label for="oa-feeder-core">OA Feeder Core</label>
+        <input type="text" id="oa-feeder-core">
+
+        <label for="feeder-odc-name">FEEDER ODC NAME</label>
+        <input type="text" id="feeder-odc-name">
+
+        <label for="feeder-odc-core">FEEDER ODC CORE</label>
+        <input type="text" id="feeder-odc-core">
+
+        <label for="odc-name">ODC NAME</label>
+        <input type="text" id="odc-name">
+
+        <button onclick="addRow()">Add</button>
+        <button onclick="saveData()">Save</button>
     </div>
-</div>
 
-    <script>var slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function openModal() {
-            document.getElementById("myModal").style.display = "block";
-        }
-        
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-        
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-        
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-        }
-        </script>
+    <table>
+        <thead>
+            <tr>
+                <th>STO</th>
+                <th>GPON</th>
+                <th>Slot-port</th>
+                <th>EA Rack</th>
+                <th>EA Panel</th>
+                <th>EA Slot.Port</th>
+                <th>OA Rack</th>
+                <th>OA Panel</th>
+                <th>OA Slot.Port</th>
+                <th>OA Feeder Core</th>
+                <th>FEEDER ODC NAME</th>
+                <th>FEEDER ODC CORE</th>
+                <th>ODC NAME</th>
+            </tr>
+        </thead>
+        <tbody id="data-table-body">
+        </tbody>
+    </table>
 
-    
     <script>
-        // Pergi ke bagian yang dituju dengan smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        function addRow() {
+            var sto = document.getElementById('sto').value;
+            var gpon = document.getElementById('gpon').value;
+            var slotPort = document.getElementById('slot-port').value;
+            var eaRack = document.getElementById('ea-rack').value;
+            var eaPanel = document.getElementById('ea-panel').value;
+            var eaSlotPort = document.getElementById('ea-slot-port').value;
+            var oaRack = document.getElementById('oa-rack').value;
+            var oaPanel = document.getElementById('oa-panel').value;
+            var oaSlotPort = document.getElementById('oa-slot-port').value;
+            var oaFeederCore = document.getElementById('oa-feeder-core').value;
+            var feederOdcName = document.getElementById('feeder-odc-name').value;
+            var feederOdcCore = document.getElementById('feeder-odc-core').value;
+            var odcName = document.getElementById('odc-name').value;
+
+            var tableBody = document.getElementById('data-table-body');
+            var newRow = document.createElement('tr');
+            
+            newRow.innerHTML = `
+                <td>${sto}</td>
+                <td>${gpon}</td>
+                <td>${slotPort}</td>
+                <td>${eaRack}</td>
+                <td>${eaPanel}</td>
+                <td>${eaSlotPort}</td>
+                <td>${oaRack}</td>
+                <td>${oaPanel}</td>
+                <td>${oaSlotPort}</td>
+                <td>${oaFeederCore}</td>
+                <td>${feederOdcName}</td>
+                <td>${feederOdcCore}</td>
+                <td>${odcName}</td>
+            `;
+
+            tableBody.appendChild(newRow);
+        }
+
+        function saveData() {
+            // Implementasi untuk menyimpan data
+            alert('Data saved!');
+        }
     </script>
 </body>
 </html>
