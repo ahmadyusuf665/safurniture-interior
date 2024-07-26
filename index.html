@@ -135,6 +135,7 @@
                 <th>FEEDER ODC NAME</th>
                 <th>FEEDER ODC CORE</th>
                 <th>ODC NAME</th>
+                <th>Timestamp</th>
             </tr>
         </thead>
         <tbody id="data-table-body">
@@ -142,24 +143,42 @@
     </table>
 
     <script>
-        function addRow() {
-            var sto = document.getElementById('sto').value;
-            var gpon = document.getElementById('gpon').value;
-            var slotPort = document.getElementById('slot-port').value;
-            var eaRack = document.getElementById('ea-rack').value;
-            var eaPanel = document.getElementById('ea-panel').value;
-            var eaSlotPort = document.getElementById('ea-slot-port').value;
-            var oaRack = document.getElementById('oa-rack').value;
-            var oaPanel = document.getElementById('oa-panel').value;
-            var oaSlotPort = document.getElementById('oa-slot-port').value;
-            var oaFeederCore = document.getElementById('oa-feeder-core').value;
-            var feederOdcName = document.getElementById('feeder-odc-name').value;
-            var feederOdcCore = document.getElementById('feeder-odc-core').value;
-            var odcName = document.getElementById('odc-name').value;
+        let existingData = new Set();
 
-            var tableBody = document.getElementById('data-table-body');
-            var newRow = document.createElement('tr');
+        function addRow() {
+            const sto = document.getElementById('sto').value.trim();
+            const gpon = document.getElementById('gpon').value.trim();
+            const slotPort = document.getElementById('slot-port').value.trim();
+            const eaRack = document.getElementById('ea-rack').value.trim();
+            const eaPanel = document.getElementById('ea-panel').value.trim();
+            const eaSlotPort = document.getElementById('ea-slot-port').value.trim();
+            const oaRack = document.getElementById('oa-rack').value.trim();
+            const oaPanel = document.getElementById('oa-panel').value.trim();
+            const oaSlotPort = document.getElementById('oa-slot-port').value.trim();
+            const oaFeederCore = document.getElementById('oa-feeder-core').value.trim();
+            const feederOdcName = document.getElementById('feeder-odc-name').value.trim();
+            const feederOdcCore = document.getElementById('feeder-odc-core').value.trim();
+            const odcName = document.getElementById('odc-name').value.trim();
+
+            // Validasi input
+            if (!sto || !gpon || !slotPort || !eaRack || !eaPanel || !eaSlotPort || !oaRack || !oaPanel || !oaSlotPort || !oaFeederCore || !feederOdcName || !feederOdcCore || !odcName) {
+                alert('Mohon lengkapi semua field.');
+                return;
+            }
+
+            const rowKey = [sto, gpon, slotPort, eaRack, eaPanel, eaSlotPort, oaRack, oaPanel, oaSlotPort, oaFeederCore, feederOdcName, feederOdcCore, odcName].join('|');
             
+            if (existingData.has(rowKey)) {
+                alert('Data ini sudah ada.');
+                return;
+            }
+
+            existingData.add(rowKey);
+
+            const tableBody = document.getElementById('data-table-body');
+            const newRow = document.createElement('tr');
+            const timestamp = new Date().toLocaleString();
+
             newRow.innerHTML = `
                 <td>${sto}</td>
                 <td>${gpon}</td>
@@ -174,13 +193,28 @@
                 <td>${feederOdcName}</td>
                 <td>${feederOdcCore}</td>
                 <td>${odcName}</td>
+                <td>${timestamp}</td>
             `;
 
             tableBody.appendChild(newRow);
+
+            // Reset form fields
+            document.getElementById('sto').value = '';
+            document.getElementById('gpon').value = '';
+            document.getElementById('slot-port').value = '';
+            document.getElementById('ea-rack').value = '';
+            document.getElementById('ea-panel').value = '';
+            document.getElementById('ea-slot-port').value = '';
+            document.getElementById('oa-rack').value = '';
+            document.getElementById('oa-panel').value = '';
+            document.getElementById('oa-slot-port').value = '';
+            document.getElementById('oa-feeder-core').value = '';
+            document.getElementById('feeder-odc-name').value = '';
+            document.getElementById('feeder-odc-core').value = '';
+            document.getElementById('odc-name').value = '';
         }
 
         function saveData() {
-            // Implementasi untuk menyimpan data
             alert('Data saved!');
         }
     </script>
