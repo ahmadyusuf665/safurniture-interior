@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entri Data</title>
+    <title>Data Entry Dashboard</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 {
@@ -18,38 +21,59 @@
             color: #333;
         }
 
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
         .form-container {
-            max-width: 500px;
-            margin: 20px auto;
+            flex: 1;
+            max-width: 25%;
             padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-right: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         .form-container label {
             display: block;
-            margin: 8px 0 4px;
+            margin: 6px 0 4px;
             font-weight: 600;
             color: #555;
         }
 
         .form-container input {
-            width: calc(100% - 16px);
-            padding: 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
             box-sizing: border-box;
-            font-size: 14px;
+            font-size: 13px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-container input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0,123,255,0.3);
         }
 
         .form-container button {
             width: 48%;
-            padding: 10px;
+            padding: 8px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             background-color: #007BFF;
             color: #fff;
             font-size: 14px;
@@ -71,11 +95,27 @@
             background-color: #218838;
         }
 
+        .table-container {
+            flex: 2;
+            max-width: 70%;
+            overflow-x: auto;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .table-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px auto;
-            max-width: 1200px;
+            margin-top: 20px;
         }
 
         table, th, td {
@@ -83,9 +123,10 @@
         }
 
         th, td {
-            padding: 8px;
+            padding: 10px;
             text-align: left;
             font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         th {
@@ -99,80 +140,85 @@
 
         tbody tr:hover {
             background-color: #e9ecef;
+            color: #000;
         }
     </style>
 </head>
 <body>
-    <h1>Entri Data</h1>
-    <div class="form-container">
-        <label for="sto">STO</label>
-        <input type="text" id="sto">
-
-        <label for="gpon">GPON</label>
-        <input type="text" id="gpon">
-
-        <label for="slot-port">Slot-port</label>
-        <input type="text" id="slot-port">
-
-        <label for="ea-rack">EA Rack</label>
-        <input type="text" id="ea-rack">
-
-        <label for="ea-panel">EA Panel</label>
-        <input type="text" id="ea-panel">
-
-        <label for="ea-slot-port">EA Slot.Port</label>
-        <input type="text" id="ea-slot-port">
-
-        <label for="oa-rack">OA Rack</label>
-        <input type="text" id="oa-rack">
-
-        <label for="oa-panel">OA Panel</label>
-        <input type="text" id="oa-panel">
-
-        <label for="oa-slot-port">OA Slot.Port</label>
-        <input type="text" id="oa-slot-port">
-
-        <label for="oa-feeder-core">OA Feeder Core</label>
-        <input type="text" id="oa-feeder-core">
-
-        <label for="feeder-odc-name">FEEDER ODC NAME</label>
-        <input type="text" id="feeder-odc-name">
-
-        <label for="feeder-odc-core">FEEDER ODC CORE</label>
-        <input type="text" id="feeder-odc-core">
-
-        <label for="odc-name">ODC NAME</label>
-        <input type="text" id="odc-name">
-
-        <button onclick="addRow()">Add</button>
-        <button onclick="saveData()">Save</button>
+    <h1>Data Entry Dashboard</h1>
+    <div class="container">
+        <div class="form-container">
+            <label for="sto">STO</label>
+            <input type="text" id="sto">
+    
+            <label for="gpon">GPON</label>
+            <input type="text" id="gpon">
+    
+            <label for="slot-port">Slot-port</label>
+            <input type="text" id="slot-port">
+    
+            <label for="ea-rack">EA Rack</label>
+            <input type="text" id="ea-rack">
+    
+            <label for="ea-panel">EA Panel</label>
+            <input type="text" id="ea-panel">
+    
+            <label for="ea-slot-port">EA Slot.Port</label>
+            <input type="text" id="ea-slot-port">
+    
+            <label for="oa-rack">OA Rack</label>
+            <input type="text" id="oa-rack">
+    
+            <label for="oa-panel">OA Panel</label>
+            <input type="text" id="oa-panel">
+    
+            <label for="oa-slot-port">OA Slot.Port</label>
+            <input type="text" id="oa-slot-port">
+    
+            <label for="oa-feeder-core">OA Feeder Core</label>
+            <input type="text" id="oa-feeder-core">
+    
+            <label for="feeder-odc-name">FEEDER ODC NAME</label>
+            <input type="text" id="feeder-odc-name">
+    
+            <label for="feeder-odc-core">FEEDER ODC CORE</label>
+            <input type="text" id="feeder-odc-core">
+    
+            <label for="odc-name">ODC NAME</label>
+            <input type="text" id="odc-name">
+    
+            <button onclick="addRow()">Add</button>
+            <button onclick="saveData()">Save</button>
+        </div>
+    
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>STO</th>
+                        <th>GPON</th>
+                        <th>Slot-port</th>
+                        <th>EA Rack</th>
+                        <th>EA Panel</th>
+                        <th>EA Slot.Port</th>
+                        <th>OA Rack</th>
+                        <th>OA Panel</th>
+                        <th>OA Slot.Port</th>
+                        <th>OA Feeder Core</th>
+                        <th>FEEDER ODC NAME</th>
+                        <th>FEEDER ODC CORE</th>
+                        <th>ODC NAME</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body">
+                </tbody>
+            </table>
+        </div>
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>STO</th>
-                <th>GPON</th>
-                <th>Slot-port</th>
-                <th>EA Rack</th>
-                <th>EA Panel</th>
-                <th>EA Slot.Port</th>
-                <th>OA Rack</th>
-                <th>OA Panel</th>
-                <th>OA Slot.Port</th>
-                <th>OA Feeder Core</th>
-                <th>FEEDER ODC NAME</th>
-                <th>FEEDER ODC CORE</th>
-                <th>ODC NAME</th>
-                <th>Timestamp</th>
-            </tr>
-        </thead>
-        <tbody id="data-table-body">
-        </tbody>
-    </table>
-
     <script>
         let existingData = new Set();
+        let allData = [];
 
         function addRow() {
             const sto = document.getElementById('sto').value.trim();
@@ -188,45 +234,43 @@
             const feederOdcName = document.getElementById('feeder-odc-name').value.trim();
             const feederOdcCore = document.getElementById('feeder-odc-core').value.trim();
             const odcName = document.getElementById('odc-name').value.trim();
-
+    
             // Validasi input
             if (!sto || !gpon || !slotPort || !eaRack || !eaPanel || !eaSlotPort || !oaRack || !oaPanel || !oaSlotPort || !oaFeederCore || !feederOdcName || !feederOdcCore || !odcName) {
                 alert('Mohon lengkapi semua field.');
                 return;
             }
-
+    
             const rowKey = [sto, gpon, slotPort, eaRack, eaPanel, eaSlotPort, oaRack, oaPanel, oaSlotPort, oaFeederCore, feederOdcName, feederOdcCore, odcName].join('|');
             
             if (existingData.has(rowKey)) {
                 alert('Data ini sudah ada.');
                 return;
             }
-
+    
             existingData.add(rowKey);
-
-            const tableBody = document.getElementById('data-table-body');
-            const newRow = document.createElement('tr');
+    
             const timestamp = new Date().toLocaleString();
-
-            newRow.innerHTML = `
-                <td>${sto}</td>
-                <td>${gpon}</td>
-                <td>${slotPort}</td>
-                <td>${eaRack}</td>
-                <td>${eaPanel}</td>
-                <td>${eaSlotPort}</td>
-                <td>${oaRack}</td>
-                <td>${oaPanel}</td>
-                <td>${oaSlotPort}</td>
-                <td>${oaFeederCore}</td>
-                <td>${feederOdcName}</td>
-                <td>${feederOdcCore}</td>
-                <td>${odcName}</td>
-                <td>${timestamp}</td>
-            `;
-
-            tableBody.appendChild(newRow);
-
+            const newRowData = {
+                sto,
+                gpon,
+                slotPort,
+                eaRack,
+                eaPanel,
+                eaSlotPort,
+                oaRack,
+                oaPanel,
+                oaSlotPort,
+                oaFeederCore,
+                feederOdcName,
+                feederOdcCore,
+                odcName,
+                timestamp
+            };
+    
+            allData.push(newRowData);
+            renderTable();
+    
             // Reset form fields
             document.getElementById('sto').value = '';
             document.getElementById('gpon').value = '';
@@ -242,9 +286,38 @@
             document.getElementById('feeder-odc-core').value = '';
             document.getElementById('odc-name').value = '';
         }
-
+    
+        function renderTable() {
+            const tableBody = document.getElementById('data-table-body');
+            tableBody.innerHTML = '';
+    
+            allData.forEach(rowData => {
+                const newRow = document.createElement('tr');
+    
+                newRow.innerHTML = `
+                    <td>${rowData.sto}</td>
+                    <td>${rowData.gpon}</td>
+                    <td>${rowData.slotPort}</td>
+                    <td>${rowData.eaRack}</td>
+                    <td>${rowData.eaPanel}</td>
+                    <td>${rowData.eaSlotPort}</td>
+                    <td>${rowData.oaRack}</td>
+                    <td>${rowData.oaPanel}</td>
+                    <td>${rowData.oaSlotPort}</td>
+                    <td>${rowData.oaFeederCore}</td>
+                    <td>${rowData.feederOdcName}</td>
+                    <td>${rowData.feederOdcCore}</td>
+                    <td>${rowData.odcName}</td>
+                    <td>${rowData.timestamp}</td>
+                `;
+    
+                tableBody.appendChild(newRow);
+            });
+        }
+    
         function saveData() {
             alert('Data saved!');
+            console.log(allData); // Here you can replace with actual save logic
         }
     </script>
 </body>
