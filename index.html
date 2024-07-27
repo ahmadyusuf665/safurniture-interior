@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Entry Dashboard</title>
+    <title>Data Entry System</title>
     <style>
+        /* CSS Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background-color: #e9ecef;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,7 +19,7 @@
         h1 {
             text-align: center;
             margin-top: 20px;
-            color: #333;
+            color: #343a40;
         }
 
         .container {
@@ -29,54 +30,102 @@
             max-width: 1200px;
         }
 
-        .form-container {
-            flex: 1;
-            max-width: 25%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
+        .form-container, .table-container {
+            padding: 20px;
+            border-radius: 8px;
             background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-right: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .form-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        .form-container {
+            flex: 1;
+            max-width: 30%;
+        }
+
+        .table-container {
+            flex: 2;
+            max-width: 65%;
+            overflow-x: auto;
+        }
+
+        .login-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-top: 50px;
+            width: 300px;
+        }
+
+        .login-container label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #495057;
+        }
+
+        .login-container input {
+            width: calc(100% - 14px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 12px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .login-container input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0,123,255,0.25);
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
         }
 
         .form-container label {
             display: block;
-            margin: 6px 0 4px;
-            font-weight: 600;
-            color: #555;
+            margin: 4px 0 4px;
+            font-size: 11px;
+            font-weight: 400;
+            color: #495057;
         }
 
         .form-container input {
             width: calc(100% - 12px);
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            padding: 6px;
+            margin-bottom: 6px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
             box-sizing: border-box;
-            font-size: 13px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .form-container input:focus {
-            border-color: #007BFF;
-            box-shadow: 0 0 8px rgba(0,123,255,0.3);
+            font-size: 11px;
         }
 
         .form-container button {
             width: 48%;
-            padding: 8px;
+            padding: 6px;
             border: none;
-            border-radius: 6px;
-            background-color: #007BFF;
+            border-radius: 4px;
+            background-color: #007bff;
             color: #fff;
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
             margin-right: 4%;
             transition: background-color 0.3s;
@@ -96,129 +145,182 @@
         }
 
         .table-container {
-            flex: 2;
-            max-width: 70%;
-            overflow-x: auto;
-            padding: 15px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         }
 
-        .table-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        .search-container {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .search-container input {
+            width: calc(100% - 110px);
+            padding: 6px;
+            margin-right: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .search-container button {
+            width: 100px;
+            padding: 6px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #0056b3;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            font-size: 11px;
         }
 
         table, th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #dee2e6;
         }
 
         th, td {
-            padding: 10px;
+            padding: 8px;
             text-align: left;
-            font-size: 14px;
-            transition: background-color 0.3s, color 0.3s;
+            color: #495057;
         }
 
         th {
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #f1f3f5;
+            color: #212529;
         }
 
         tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
         }
 
         tbody tr:hover {
-            background-color: #e9ecef;
+            background-color: #e2e6ea;
             color: #000;
         }
     </style>
 </head>
 <body>
-    <h1>Data Entry Dashboard</h1>
-    <div class="container">
-        <div class="form-container">
-            <label for="sto">STO</label>
-            <input type="text" id="sto">
-    
-            <label for="gpon">GPON</label>
-            <input type="text" id="gpon">
-    
-            <label for="slot-port">Slot-port</label>
-            <input type="text" id="slot-port">
-    
-            <label for="ea-rack">EA Rack</label>
-            <input type="text" id="ea-rack">
-    
-            <label for="ea-panel">EA Panel</label>
-            <input type="text" id="ea-panel">
-    
-            <label for="ea-slot-port">EA Slot.Port</label>
-            <input type="text" id="ea-slot-port">
-    
-            <label for="oa-rack">OA Rack</label>
-            <input type="text" id="oa-rack">
-    
-            <label for="oa-panel">OA Panel</label>
-            <input type="text" id="oa-panel">
-    
-            <label for="oa-slot-port">OA Slot.Port</label>
-            <input type="text" id="oa-slot-port">
-    
-            <label for="oa-feeder-core">OA Feeder Core</label>
-            <input type="text" id="oa-feeder-core">
-    
-            <label for="feeder-odc-name">FEEDER ODC NAME</label>
-            <input type="text" id="feeder-odc-name">
-    
-            <label for="feeder-odc-core">FEEDER ODC CORE</label>
-            <input type="text" id="feeder-odc-core">
-    
-            <label for="odc-name">ODC NAME</label>
-            <input type="text" id="odc-name">
-    
-            <button onclick="addRow()">Add</button>
-            <button onclick="saveData()">Save</button>
-        </div>
-    
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>STO</th>
-                        <th>GPON</th>
-                        <th>Slot-port</th>
-                        <th>EA Rack</th>
-                        <th>EA Panel</th>
-                        <th>EA Slot.Port</th>
-                        <th>OA Rack</th>
-                        <th>OA Panel</th>
-                        <th>OA Slot.Port</th>
-                        <th>OA Feeder Core</th>
-                        <th>FEEDER ODC NAME</th>
-                        <th>FEEDER ODC CORE</th>
-                        <th>ODC NAME</th>
-                        <th>Timestamp</th>
-                    </tr>
-                </thead>
-                <tbody id="data-table-body">
-                </tbody>
-            </table>
+    <!-- Login Form -->
+    <div id="login-container" class="login-container">
+        <h1>Login</h1>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button class="login-button" onclick="login()">Login</button>
+    </div>
+
+    <!-- Data Entry Form -->
+    <div id="data-entry-container" class="container" style="display: none;">
+        <h1>Data Entry Dashboard</h1>
+        <div class="container">
+            <div class="form-container">
+                <label for="sto">STO</label>
+                <input type="text" id="sto">
+                
+                <label for="gpon">GPON</label>
+                <input type="text" id="gpon">
+                
+                <label for="slot-port">Slot-port</label>
+                <input type="text" id="slot-port">
+                
+                <label for="ea-rack">EA Rack</label>
+                <input type="text" id="ea-rack">
+                
+                <label for="ea-panel">EA Panel</label>
+                <input type="text" id="ea-panel">
+                
+                <label for="ea-slot-port">EA Slot.Port</label>
+                <input type="text" id="ea-slot-port">
+                
+                <label for="oa-rack">OA Rack</label>
+                <input type="text" id="oa-rack">
+                
+                <label for="oa-panel">OA Panel</label>
+                <input type="text" id="oa-panel">
+                
+                <label for="oa-slot-port">OA Slot.Port</label>
+                <input type="text" id="oa-slot-port">
+                
+                <label for="oa-feeder-core">OA Feeder Core</label>
+                <input type="text" id="oa-feeder-core">
+                
+                <label for="feeder-odc-name">FEEDER ODC NAME</label>
+                <input type="text" id="feeder-odc-name">
+                
+                <label for="feeder-odc-core">FEEDER ODC CORE</label>
+                <input type="text" id="feeder-odc-core">
+                
+                <label for="odc-name">ODC NAME</label>
+                <input type="text" id="odc-name">
+                
+                <button onclick="addRow()">Add</button>
+                <button onclick="saveData()">Save</button>
+            </div>
+
+            <div class="table-container">
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search data">
+                    <button onclick="searchData()">Search</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STO</th>
+                            <th>GPON</th>
+                            <th>Slot-port</th>
+                            <th>EA Rack</th>
+                            <th>EA Panel</th>
+                            <th>EA Slot.Port</th>
+                            <th>OA Rack</th>
+                            <th>OA Panel</th>
+                            <th>OA Slot.Port</th>
+                            <th>OA Feeder Core</th>
+                            <th>FEEDER ODC NAME</th>
+                            <th>FEEDER ODC CORE</th>
+                            <th>ODC NAME</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body">
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
     <script>
         let existingData = new Set();
         let allData = [];
+
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+  
+            // Simulasi pengecekan login
+            if (username === 'admin' && password === 'password') {
+                document.getElementById('login-container').style.display = 'none';
+                document.getElementById('data-entry-container').style.display = 'flex';
+            } else {
+                alert('Username or password is incorrect.');
+            }
+        }
 
         function addRow() {
             const sto = document.getElementById('sto').value.trim();
@@ -234,90 +336,80 @@
             const feederOdcName = document.getElementById('feeder-odc-name').value.trim();
             const feederOdcCore = document.getElementById('feeder-odc-core').value.trim();
             const odcName = document.getElementById('odc-name').value.trim();
-    
-            // Validasi input
-            if (!sto || !gpon || !slotPort || !eaRack || !eaPanel || !eaSlotPort || !oaRack || !oaPanel || !oaSlotPort || !oaFeederCore || !feederOdcName || !feederOdcCore || !odcName) {
-                alert('Mohon lengkapi semua field.');
-                return;
-            }
-    
-            const rowKey = [sto, gpon, slotPort, eaRack, eaPanel, eaSlotPort, oaRack, oaPanel, oaSlotPort, oaFeederCore, feederOdcName, feederOdcCore, odcName].join('|');
-            
-            if (existingData.has(rowKey)) {
-                alert('Data ini sudah ada.');
-                return;
-            }
-    
-            existingData.add(rowKey);
-    
+
             const timestamp = new Date().toLocaleString();
-            const newRowData = {
-                sto,
-                gpon,
-                slotPort,
-                eaRack,
-                eaPanel,
-                eaSlotPort,
-                oaRack,
-                oaPanel,
-                oaSlotPort,
-                oaFeederCore,
-                feederOdcName,
-                feederOdcCore,
-                odcName,
-                timestamp
-            };
-    
-            allData.push(newRowData);
-            renderTable();
-    
-            // Reset form fields
-            document.getElementById('sto').value = '';
-            document.getElementById('gpon').value = '';
-            document.getElementById('slot-port').value = '';
-            document.getElementById('ea-rack').value = '';
-            document.getElementById('ea-panel').value = '';
-            document.getElementById('ea-slot-port').value = '';
-            document.getElementById('oa-rack').value = '';
-            document.getElementById('oa-panel').value = '';
-            document.getElementById('oa-slot-port').value = '';
-            document.getElementById('oa-feeder-core').value = '';
-            document.getElementById('feeder-odc-name').value = '';
-            document.getElementById('feeder-odc-core').value = '';
-            document.getElementById('odc-name').value = '';
-        }
-    
-        function renderTable() {
-            const tableBody = document.getElementById('data-table-body');
-            tableBody.innerHTML = '';
-    
-            allData.forEach(rowData => {
-                const newRow = document.createElement('tr');
-    
-                newRow.innerHTML = `
-                    <td>${rowData.sto}</td>
-                    <td>${rowData.gpon}</td>
-                    <td>${rowData.slotPort}</td>
-                    <td>${rowData.eaRack}</td>
-                    <td>${rowData.eaPanel}</td>
-                    <td>${rowData.eaSlotPort}</td>
-                    <td>${rowData.oaRack}</td>
-                    <td>${rowData.oaPanel}</td>
-                    <td>${rowData.oaSlotPort}</td>
-                    <td>${rowData.oaFeederCore}</td>
-                    <td>${rowData.feederOdcName}</td>
-                    <td>${rowData.feederOdcCore}</td>
-                    <td>${rowData.odcName}</td>
-                    <td>${rowData.timestamp}</td>
+
+            if (sto && gpon && slotPort && eaRack && eaPanel && eaSlotPort &&
+                oaRack && oaPanel && oaSlotPort && oaFeederCore && feederOdcName &&
+                feederOdcCore && odcName) {
+
+                const newRow = {
+                    sto, gpon, slotPort, eaRack, eaPanel, eaSlotPort, oaRack, oaPanel, oaSlotPort, oaFeederCore, feederOdcName, feederOdcCore, odcName, timestamp
+                };
+
+                allData.push(newRow);
+
+                const tableBody = document.getElementById('data-table-body');
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${sto}</td>
+                    <td>${gpon}</td>
+                    <td>${slotPort}</td>
+                    <td>${eaRack}</td>
+                    <td>${eaPanel}</td>
+                    <td>${eaSlotPort}</td>
+                    <td>${oaRack}</td>
+                    <td>${oaPanel}</td>
+                    <td>${oaSlotPort}</td>
+                    <td>${oaFeederCore}</td>
+                    <td>${feederOdcName}</td>
+                    <td>${feederOdcCore}</td>
+                    <td>${odcName}</td>
+                    <td>${timestamp}</td>
                 `;
-    
-                tableBody.appendChild(newRow);
-            });
+                tableBody.appendChild(row);
+
+                // Clear input fields
+                document.getElementById('sto').value = '';
+                document.getElementById('gpon').value = '';
+                document.getElementById('slot-port').value = '';
+                document.getElementById('ea-rack').value = '';
+                document.getElementById('ea-panel').value = '';
+                document.getElementById('ea-slot-port').value = '';
+                document.getElementById('oa-rack').value = '';
+                document.getElementById('oa-panel').value = '';
+                document.getElementById('oa-slot-port').value = '';
+                document.getElementById('oa-feeder-core').value = '';
+                document.getElementById('feeder-odc-name').value = '';
+                document.getElementById('feeder-odc-core').value = '';
+                document.getElementById('odc-name').value = '';
+            } else {
+                alert('Please fill in all fields.');
+            }
         }
-    
+
         function saveData() {
-            alert('Data saved!');
-            console.log(allData); // Here you can replace with actual save logic
+            console.log('Data saved:', allData);
+            alert('Data saved successfully.');
+        }
+
+        function searchData() {
+            const searchQuery = document.getElementById('search').value.toLowerCase();
+            const rows = document.querySelectorAll('#data-table-body tr');
+
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                let visible = false;
+
+                for (const cell of cells) {
+                    if (cell.textContent.toLowerCase().includes(searchQuery)) {
+                        visible = true;
+                        break;
+                    }
+                }
+
+                row.style.display = visible ? '' : 'none';
+            });
         }
     </script>
 </body>
